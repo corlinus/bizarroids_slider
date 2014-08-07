@@ -1,0 +1,47 @@
+<%= content_for :page_header do %>
+  <h1>
+    <%= bizarroids_t 'slider.collection' %>
+    <%= @collection.name %>
+  </h1>
+<% end %>
+
+<div class='lead'>
+  <%= link_to bizarroids_t(:'slider.new_slide'), bizarroids_slider_engine.new_slider_collection_slide_path(@collection), class: 'btn btn-success' %>
+</div>
+
+<table class='table table-bordered table-striped'>
+  <thead>
+    <tr>
+      <% @collection.slide_require_attributes.each do |attr_name| %>
+      <th><%= Bizarroids::Slider::Slide.human_attribute_name(attr_name) %></th>
+      <% end %>
+      <th class='col-sm-2'>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @slides.each do |slide| %>
+      <tr>
+        <% @collection.slide_require_attributes.each do |attr_name| %>
+          <%# TODO link to media %>
+          <td><%= slide.send attr_name %></td>
+        <% end %>
+        <td class='text-right'>
+          <%=
+            bizarroids_move_buttons(
+              bizarroids_slider_engine.up_slider_slide_path(slide),
+              bizarroids_slider_engine.down_slider_slide_path(slide),
+            )
+          %>
+          &nbsp;
+          <%=
+            bizarroids_manage_buttons(
+              bizarroids_slider_engine.edit_slider_slide_path(slide),
+              bizarroids_slider_engine.slider_slide_path(slide),
+              bizarroids_t('slider.confirm_slide_destroy')
+            )
+          %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

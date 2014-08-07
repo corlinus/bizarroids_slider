@@ -1,0 +1,23 @@
+<%= content_for :page_header do %>
+  <h1><%= bizarroids_t 'slider.collections' %></h1>
+<% end %>
+
+<table class='table table-bordered table-striped'>
+  <thead>
+    <tr>
+      <th><%= Bizarroids::Slider::Collection.human_attribute_name(:name) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @collections.each do |collection| %>
+      <tr>
+        <td>
+          <%= link_to collection.human_name, bizarroids_slider_engine.slider_collection_slides_path(collection) %>
+          <% if collection.description.present? %>
+            <br/><small><%= collection.description %></small>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,9 @@
+<%= content_for :page_header do %>
+  <h1>
+    <%= bizarroids_t 'slider.collection' %>
+    <%= @slide.collection.name %>
+    <small><%= bizarroids_t 'slider.edit_slide' %></small>
+  </h1>
+<% end %>
+
+<div class='well'><%= render 'form' %></div>

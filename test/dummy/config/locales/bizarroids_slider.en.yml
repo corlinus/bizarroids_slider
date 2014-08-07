@@ -1,0 +1,25 @@
+en:
+  activerecord:
+    models:
+      bizarroids/slider/slide:
+        one: Slide
+        other: Slides
+
+    attributes:
+      bizarroids/slider/option:
+        name: Name
+        description: Description
+        link: Link
+        media: Image
+        remove_media: Remove media
+
+  bizarroids:
+    slider:
+      name: Slide
+      new_slide: New slide
+      slide_updated: Slide updated
+      confirm_slide_destroy: Delete slide?
+    cancel: Cancel
+    edit: Edit
+    save: Save
+    not_set: Not set

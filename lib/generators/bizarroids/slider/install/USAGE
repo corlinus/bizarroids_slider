@@ -1,0 +1,14 @@
+Description:
+    It will create a migration, initializer and locale files
+
+Example:
+    rails generate bizarroids:slider:install
+
+    This will create:
+        db/migrate/create_bizarroids_slider_tables.rb
+        config/initialiser/bizarroids_slider.rb
+        config/locales/bizarroids_slider.en.yml
+        config/locales/bizarroids_slider.ru.yml
+
+    This will add:
+        routes to config/routes.rb

@@ -1,0 +1,25 @@
+ru:
+  activerecord:
+    models:
+      bizarroids/slider/slide:
+        one: Слайд
+        few: Слайда
+        other: Слайдов
+    attributes:
+      bizarroids/slider/slide:
+        name: Название
+        description: Описание
+        link: Ссылка
+        media: Изображение
+        remove_media: Удалить изображение
+
+  bizarroids:
+    slider:
+      name: Слайдер
+      new_slide: Новый слайд
+      slide_updated: Слайд обновлен
+      confirm_slide_destroy: Удалить слайд?
+    cancel: Отмена
+    edit: Редактировать
+    save: Сохранить
+    not_set: Не установлено

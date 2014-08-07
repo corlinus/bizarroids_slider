@@ -1,0 +1,11 @@
+<%= simple_form_for @slide, url: bizarroids_slider_form_submit_path,  html: { class: 'form-horizontal' } do |f| %>
+  <% @collection.slide_attributes.each do |attr_name| -%>
+    <%= f.input attr_name, required: @collection.slide_require_attributes.include?(attr_name) %>
+  <% end -%>
+  <div class='form-group'>
+    <div class='col-lg-offset-2 col-lg-10'>
+      <%= f.submit bizarroids_t(:save), class: 'btn btn-primary' %>
+      <%= link_to bizarroids_t(:cancel), bizarroids_slider_engine.slider_collection_slides_path(@collection), class: 'btn btn-link' %>
+    </div>
+  </div>
+<% end -%>

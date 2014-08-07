@@ -1,0 +1,57 @@
+= Bizarroids Slider
+
+Bizarroids Slider provides user managable collections of images Rails application. This is a part of The Bizarroids.
+
+== Installation
+
+Add it to your Gemfile:
+
+  gem 'bizarroids_slider'
+
+Run the following command to install it:
+
+  bundle install
+
+Run the generator:
+
+  rails generate bizarroids:slider:install
+
+== Configuraton
+
+Edit +config/initialisers/bizarroids_slider.rb+. You can create collections using folowing syntax:
+
+  config.collections :key, some: :options
+
+Avaliable options are:
+
+- slide_attributes: [:name, :description, :media, :link] - (default) you can add columns in migration to use them in this case. Pleas do not remove default columns from database to avoid errors.
+- slide_require_attributes: [:name, :media] (default) - make attribute required (only default attributes can be marked as required)
+- versions: { main: {}, thumb: {} } - config of carrierwave image versions. (See corresponging carrierwave documentation)
+
+Some aditional options can be found in application in +config/initialisers/bizarroids_slider.rb+
+
+== Usage
+
+Link to admin panel
+
+  bizarroids_slider_menu_link
+
+If you use cancancan place in your ability.rb somthing like
+
+  can :manage, Bizarroids::Slider::Option
+
+if don't, place in +config/initialisers/bizarroids_slider.rb+
+
+  config.use_cancancan = false
+
+To get collection for :key
+
+  Bizarroids::Slider.get(:key)
+  Bizarroids::Slider[:key]
+
+Slider provides several helpers
+
+bizarroids_slider_slides key - returns collection of slides
+bizarroids_slider_each_slide key - accepts block to iterate
+
+This project rocks and uses MIT-LICENSE.
