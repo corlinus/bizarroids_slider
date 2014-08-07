@@ -1,1 +1,1 @@
-require "bizarroids/slider"
+require "bizarroids"
