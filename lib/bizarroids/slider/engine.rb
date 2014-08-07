@@ -1,4 +1,6 @@
-module Bizarroids::Slider
-  class Engine < ::Rails::Engine
+module Bizarroids
+  module Slider
+    class Engine < ::Rails::Engine
+    end
   end
 end
