@@ -32,7 +32,7 @@ module Bizarroids::Slider
     end
 
     def update
-      if @slie.update slide_params
+      if @slide.update slide_params
         redirect_to_collection t('bizarroids.slide.slide_updated')
       else
         render :edit
