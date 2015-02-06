@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 4.1.2"
   s.add_dependency "simple_form", "~> 3.0.0"
   s.add_dependency "cancancan", "~> 1.9.0"
-  s.add_dependency "acts_as_list", "~> 0.4.0"
+  s.add_dependency "acts_as_list", "~> 0.6.0"
   s.add_dependency "mini_magick", "~> 3.8"
   s.add_dependency "carrierwave", "~> 0.10"
 
